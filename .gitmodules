@@ -1,0 +1,3 @@
+[submodule "platform/packages/crawler-core"]
+	path = platform/packages/crawler-core
+	url = git@gitlab.com:workable_packages/packages/mini-crawl.git
