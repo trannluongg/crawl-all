@@ -32,6 +32,7 @@ class CrawlReedIndustryJobCommand extends Command
         $industriesLink = DB::table('industries_uk')
             ->where('ind_site', 'reed.co.uk')
             ->where('ind_type', IndustryEnum::LINK_CATEGORY_HOT)
+            ->where('id', '>', 1709)
             ->get(['id', 'ind_url']);
 
         foreach ($industriesLink as $item)

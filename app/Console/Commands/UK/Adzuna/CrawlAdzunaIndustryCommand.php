@@ -9,7 +9,6 @@
 namespace App\Console\Commands\UK\Adzuna;
 
 use App\Crawler\UK\Adzuna\AdzunaIndustryCrawl;
-use App\Enum\IndustryEnum;
 use Illuminate\Console\Command;
 
 class CrawlAdzunaIndustryCommand extends Command

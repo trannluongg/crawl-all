@@ -38,7 +38,7 @@ class ReedIndustryJobCrawl extends CrawlerBase
     private function __configSelector(): array
     {
         return [
-            'jobs'        => [
+            'jobs'      => [
                 'selector' => 'css: #server-results .job-result-card',
                 'link'     => false,
                 'multiple' => true,
@@ -50,7 +50,7 @@ class ReedIndustryJobCrawl extends CrawlerBase
                     ],
                 ],
             ],
-            'link_next'   => [
+            'link_next' => [
                 'selector' => 'css: #nextPage',
                 'link'     => false,
                 'multiple' => false,
@@ -155,8 +155,12 @@ class ReedIndustryJobCrawl extends CrawlerBase
         $linkNext = $tags[0]->getAttribute('href');
         if ($linkNext)
         {
-            $linkNext = 'https://' . $this->__cleanLink($site . '/' . $linkNext);
-            $this->__getJobs($linkNext, $options);
+            $linkNext        = 'https://' . $this->__cleanLink($site . '/' . $linkNext);
+            $explodeLinkNext = explode('=', $linkNext);
+            if ($explodeLinkNext <= 50)
+            {
+                $this->__getJobs($linkNext, $options);
+            }
         }
     }
 
