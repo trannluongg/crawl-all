@@ -157,7 +157,7 @@ class ReedIndustryJobCrawl extends CrawlerBase
         {
             $linkNext        = 'https://' . $this->__cleanLink($site . '/' . $linkNext);
             $explodeLinkNext = explode('=', $linkNext);
-            if ($explodeLinkNext <= 50)
+            if (isset($explodeLinkNext[1]) && $explodeLinkNext[1] <= 50)
             {
                 $this->__getJobs($linkNext, $options);
             }
