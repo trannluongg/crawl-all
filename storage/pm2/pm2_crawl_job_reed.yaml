@@ -1,0 +1,9 @@
+apps:
+  - script: artisan
+    name: 'crawl_base:crawl_reed_job'
+    interpreter: /usr/bin/php
+    cwd: /var/www/crawl_base
+    exec_mode: fork
+    args: crawl-reed-industry-job:run
+    autorestart: false
+    restart_delay: 3000
